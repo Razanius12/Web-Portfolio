@@ -208,6 +208,20 @@
  padding: 60px 0 60px 0;
 }
 
+.copyright-text,
+.distribution-text {
+ color: var(--white-color);
+}
+
+.copyright-text {
+ font-size: var(--copyright-font-size);
+}
+
+.distribution-text {
+ font-size: var(--copyright-font-size);
+ text-align: right;
+}
+
 @media (min-width: 768px) {
 
  .about-me {
