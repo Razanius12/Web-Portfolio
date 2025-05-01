@@ -1,5 +1,7 @@
 # Personal Web Portfolio
 
+[![Website Preview](https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D1%26deploymentId%3Ddpl_5nvjMEjqZGez1MdwB9Cc2h8EBaKN%26teamId%3Drazanius12s-projects%26withStatus%3D1&w=640&q=75)](https://razanius12.vercel.app/)
+
 A modern, responsive personal portfolio website showcasing my projects, experience, and certifications.
 
 ## Features
