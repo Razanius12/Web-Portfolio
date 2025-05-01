@@ -1,0 +1,239 @@
+:root {
+ --white-color: #ffffff;
+ --dark-color: #121212;
+ --primary-color: #272829;
+ --secondary-color: #343a40;
+ --thirdary-color: #2b353d;
+
+ --link-hover-color: #343a40;
+
+ --p-font-size: 18px;
+ --btn-font-size: 14px;
+ --copyright-font-size: 16px;
+
+ --border-radius-large: 100px;
+ --border-radius-medium: 20px;
+ --border-radius-medium-16px: 16px;
+ --border-radius-small: 10px;
+
+ --font-weight-light: 300;
+ --font-weight-normal: 400;
+ --font-weight-bold: 700;
+}
+
+.navbar {
+ transition: background-color 0.3s ease;
+}
+
+.navbar.transparent {
+ background: transparent !important;
+}
+
+.navbar.scrolled {
+ background: var(--dark-color) !important;
+}
+
+.navbar-brand {
+ margin: 0 40px 0 40px !important;
+}
+
+.hero {
+ background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), url('img/hero.jpg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+}
+
+.about-me {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.works {
+ background: var(--primary-color);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ flex-wrap: wrap;
+}
+
+/* ---------------------------------- */
+/* equal height cards and crop images */
+
+.works .card,
+.experience .card {
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+}
+
+.works .card-body,
+.experience .card-body {
+ flex: 1 1 auto;
+ display: flex;
+ flex-direction: column;
+}
+
+.works .card-img-top,
+.experience .card-img-top {
+ width: 100%;
+ aspect-ratio: 16/9;
+ object-fit: cover;
+}
+
+.works .card-footer,
+.experience .card-footer {
+ margin-top: auto;
+}
+
+.card-img-top {
+ height: auto !important;
+}
+
+/* ---------------------------------- */
+
+.social-icon {
+ margin: 0;
+ padding: 0;
+}
+
+.social-icon-item {
+ list-style: none;
+ display: inline-block;
+ vertical-align: top;
+}
+
+.social-icon-link {
+ background: var(--secondary-color);
+ border-radius: var(--border-radius-large);
+ color: var(--white-color);
+ font-size: var(--copyright-font-size);
+ display: block;
+ margin-right: 10px;
+ text-align: center;
+ width: 35px;
+ height: 35px;
+ line-height: 36px;
+}
+
+.social-icon-link:hover {
+ background: var(--primary-color);
+ color: var(--white-color);
+}
+
+.experience {
+ background: var(--thirdary-color);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ flex-wrap: wrap;
+}
+
+.timeline {
+ position: relative;
+ padding: 20px 0;
+}
+
+.timeline-item {
+ position: relative;
+ margin-bottom: 30px;
+}
+
+.timeline-item .card {
+ border: none;
+ border-radius: var(--border-radius-medium);
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item .card-subtitle {
+ font-size: 0.9rem;
+ margin-top: 5px;
+}
+
+.carousel-item img {
+ object-fit: contain !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+ width: 10%;
+ opacity: 0.8;
+}
+
+.carousel-control-prev {
+ left: 6px;
+}
+
+.carousel-control-next {
+ right: 6px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+ opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+ background-color: transparent;
+ background-image: none;
+ display: inline-block;
+ width: 1.5rem;
+ height: 1.5rem;
+ border: solid rgba(255, 255, 255, 0.55);
+ border-width: 0 0.25rem 0.25rem 0;
+ transform: rotate(45deg);
+}
+
+.carousel-control-prev-icon {
+ transform: rotate(135deg);
+}
+
+.carousel-control-next-icon {
+ transform: rotate(-45deg);
+}
+
+.site-footer {
+ background-color: var(--dark-color);
+ position: relative;
+ overflow: hidden;
+ padding: 60px 0 60px 0;
+}
+
+@media (min-width: 768px) {
+
+ .about-me {
+  height: calc(100vh - 60px);
+ }
+
+ .timeline-item {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+}
+
+@media (max-width: 992px) {
+
+ .navbar-brand {
+  margin-left: 20px !important;
+ }
+
+ .navbar-toggler {
+  margin-right: 10px !important;
+ }
+
+ .navbar-nav {
+  margin: 20px 40px 20px 40px !important;
+ }
+
+}
