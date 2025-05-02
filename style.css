@@ -55,6 +55,12 @@
  align-items: center;
 }
 
+.pfp {
+ width: 200px;
+ height: 200px !important;
+ object-fit: cover;
+}
+
 .works {
  background: var(--primary-color);
  display: flex;
