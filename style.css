@@ -1,6 +1,7 @@
 :root {
  --white-color: #ffffff;
  --dark-color: #121212;
+ --dark-light-color: #222222;
  --primary-color: #272829;
  --secondary-color: #343a40;
  --thirdary-color: #2b353d;
@@ -139,29 +140,129 @@
  display: flex;
  justify-content: center;
  align-items: center;
- text-align: center;
  flex-wrap: wrap;
 }
 
 .timeline {
+ margin: 0 0 45px;
+ padding: 0;
  position: relative;
- padding: 20px 0;
 }
 
-.timeline-item {
+.timeline::before {
+ border-radius: 0.25rem;
+ background-color: var(--dark-light-color);
+ bottom: 0;
+ content: "";
+ left: 31px;
+ margin: 0;
+ position: absolute;
+ top: 0;
+ width: 4px;
+}
+
+.timeline>div {
+ margin-bottom: 15px;
+ margin-right: 10px;
  position: relative;
- margin-bottom: 30px;
 }
 
-.timeline-item .card {
- border: none;
- border-radius: var(--border-radius-medium);
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.timeline>div::before,
+.timeline>div::after {
+ content: "";
+ display: table;
 }
 
-.timeline-item .card-subtitle {
- font-size: 0.9rem;
- margin-top: 5px;
+.timeline>div>.timeline-item {
+ box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+ border-radius: 0.25rem;
+ background-color: var(--secondary-color);
+ margin-left: 60px;
+ margin-right: 15px;
+ margin-top: 0;
+ padding: 0;
+ position: relative;
+}
+
+.timeline>div>.timeline-item>.timeline-body>.card {
+ background-color: var(--secondary-color);
+ border-radius: 0.25rem;
+}
+
+.timeline>div>.timeline-item>.time {
+ color: var(--white-color);
+ float: right;
+ font-size: 12px;
+ padding: 10px;
+}
+
+.timeline>div>.timeline-item>.timeline-header {
+ border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+ line-height: 1.1;
+ margin: 0;
+ padding: 10px;
+}
+
+.timeline>div>.timeline-item>.timeline-body,
+.timeline>div>.timeline-item>.timeline-footer {
+ padding: 10px;
+}
+
+.timeline>div>.timeline-item>.timeline-body>img {
+ margin: 10px;
+}
+
+.timeline>div>.timeline-item>.timeline-body>dl,
+.timeline>div>.timeline-item>.timeline-body ol,
+.timeline>div>.timeline-item>.timeline-body ul {
+ margin: 0;
+}
+
+.timeline>div>.timeline-item>.timeline-footer>a {
+ color: var(--dark-light-color);
+}
+
+.timeline>div>.fa,
+.timeline>div>.fas,
+.timeline>div>.far,
+.timeline>div>.fab,
+.timeline>div>.fal,
+.timeline>div>.fad,
+.timeline>div>.svg-inline--fa,
+.timeline>div>.ion {
+ background-color: var(--dark-color);
+ border-radius: 50%;
+ font-size: 16px;
+ height: 30px;
+ left: 18px;
+ line-height: 30px;
+ position: absolute;
+ text-align: center;
+ top: 0;
+ width: 30px;
+}
+
+.timeline>div>.svg-inline--fa {
+ padding: 7px;
+}
+
+.timeline>.time-label>span {
+ border-radius: 4px;
+ background-color: var(--thirdary-color);
+ display: inline-block;
+ font-weight: 600;
+ padding: 5px;
+}
+
+.timeline>div>.timeline-item>.timeline-body {
+ display: flex;
+ flex-direction: column;
+}
+
+.timeline>div>.timeline-item>.timeline-body .card-img {
+ width: 100%;
+ aspect-ratio: 16/9;
+ object-fit: cover;
 }
 
 .carousel-item img {
@@ -234,10 +335,73 @@
   height: calc(100vh - 60px);
  }
 
- .timeline-item {
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+ .timeline>div>.timeline-item>.timeline-body {
+  flex-direction: row;
+  gap: 20px;
+ }
+
+ .timeline>div>.timeline-item>.timeline-body .card {
+  flex: 0 0 50%;
+  margin: 0;
+ }
+
+ .timeline>div>.timeline-item>.timeline-body .timeline-content {
+  flex: 0 0 calc(50% - 20px);
+ }
+
+ @media (max-width: 992px) {
+
+  .col-md-4 {
+   flex: 0 0 auto;
+   width: unset !important;
+  }
+
+  .pfp,
+  .rounded-circle {
+   height: unset !important;
+   object-fit: cover;
+   border-radius: unset !important;
+  }
+
+ }
+
+}
+
+@media (max-width: 768px) {
+
+ .pfp,
+ .rounded-circle {
+  height: unset !important;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: unset !important;
+ }
+
+ .timeline>div>.timeline-item>.timeline-body .card-img {
+  width: 100%;
+  aspect-ratio: 16/9 !important;
+  object-fit: cover;
+  padding-bottom: 1rem;
+ }
+
+ .timeline>div>.timeline-item {
+  margin-left: 40px;
+ }
+
+ .timeline::before {
+  left: 21px;
+ }
+
+ .timeline>div>.fa,
+ .timeline>div>.fas,
+ .timeline>div>.far,
+ .timeline>div>.fab,
+ .timeline>div>.fal,
+ .timeline>div>.fad,
+ .timeline>div>.svg-inline--fa,
+ .timeline>div>.ion {
+  left: 8px;
  }
 
 }
@@ -254,6 +418,12 @@
 
  .navbar-nav {
   margin: 20px 40px 20px 40px !important;
+ }
+
+ .timeline>div>.timeline-item>.timeline-body .card-img {
+  width: 100%;
+  aspect-ratio: unset;
+  object-fit: cover;
  }
 
 }
