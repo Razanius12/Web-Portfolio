@@ -341,7 +341,7 @@
 
  .timeline>div>.timeline-item>.timeline-body {
   flex-direction: row;
-  gap: 20px;
+  gap: 16px;
  }
 
  .timeline>div>.timeline-item>.timeline-body .card {
